@@ -12,25 +12,30 @@ import br.com.tracker.model.Status;
 import br.com.tracker.model.Task;
 
 public class TaskRepository {
-    private static final Path FILE_PATH = Paths.get("tasks.json");
+    private final Path filePath;
 
     public TaskRepository() throws IOException {
+        this(Paths.get("tasks.json"));
+    }
+
+    public TaskRepository(Path filePath) throws IOException {
+        this.filePath = filePath;
         createFileIfNotExists();
     }
 
     private void createFileIfNotExists() throws IOException {
-        if (!Files.exists(FILE_PATH)) {
-            Files.createFile(FILE_PATH);
-            Files.writeString(FILE_PATH, "[]");
+        if (!Files.exists(filePath)) {
+            Files.createFile(filePath);
+            Files.writeString(filePath, "[]");
         }
     }
 
     private String readFile() throws IOException {
-        return Files.readString(FILE_PATH);
+        return Files.readString(filePath);
     }
 
     private void writeFile(String content) throws IOException {
-        Files.writeString(FILE_PATH, content);
+        Files.writeString(filePath, content);
     }
 
     private String taskToJson(Task task) {
