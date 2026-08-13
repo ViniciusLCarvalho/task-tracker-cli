@@ -106,4 +106,24 @@ public class RepositoryTest {
         assertNotNull(tasks);
         assertTrue(tasks.isEmpty());
     }
+
+    @Test
+    void shouldSaveAndFindTasksWithDifferentStatus() throws IOException {
+        Path tempFile = tempDir.resolve("tasks.json");
+        TaskRepository repository = new TaskRepository(tempFile);
+
+        Task todo = new Task(1, "Buy eggs");
+        Task inProgress = new Task(2, "Study Java");
+        Task done = new Task(3, "Walk the dog");
+
+        inProgress.setStatus(Status.IN_PROGRESS);
+        done.setStatus(Status.DONE);
+
+        repository.saveAll(List.of(todo, inProgress, done));
+        List<Task> tasks = repository.findAll();
+
+        assertEquals(Status.TODO, tasks.get(0).getStatus());
+        assertEquals(Status.IN_PROGRESS, tasks.get(1).getStatus());
+        assertEquals(Status.DONE, tasks.get(2).getStatus());
+    }
 }
