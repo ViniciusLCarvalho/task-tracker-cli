@@ -58,4 +58,9 @@ public class Task {
     private void updateTimestamp(){
         this.updatedAt = LocalDateTime.now();
     }
+
+    @Override
+    public String toString() {
+        return id + " | " + description + " | " + status;
+    }
 }
