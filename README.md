@@ -6,7 +6,7 @@ Os dados são mantidos localmente no arquivo `tasks.json`, criado automaticament
 
 ## Projeto
 
-Repositório: [https://github.com/ViniciusLCarvalho/task-tracker-cli.git](https://github.com/ViniciusLCarvalho/task-tracker-cli.git)
+Repositório: [https://github.com/ViniciusLCarvalho/task-tracker-cli](https://github.com/ViniciusLCarvalho/task-tracker-cli)
 
 ## Pré-requisitos
 
