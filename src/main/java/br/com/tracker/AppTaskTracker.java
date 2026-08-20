@@ -1,3 +1,5 @@
+package br.com.tracker;
+
 import java.io.IOException;
 
 import br.com.tracker.controller.TaskController;

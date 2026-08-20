@@ -15,7 +15,7 @@ public class TaskService {
         this.repository = repository;
     }
 
-    public void addTask(String desc) throws IOException {
+    public int addTask(String desc) throws IOException {
         List<Task> tasks = repository.findAll();
         int nextId = 1;
 
@@ -27,6 +27,8 @@ public class TaskService {
         Task task = new Task(nextId, desc);
         tasks.add(task);
         repository.saveAll(tasks);
+
+        return nextId;
     }
 
     public void updateTask(int id, String desc) throws IOException {

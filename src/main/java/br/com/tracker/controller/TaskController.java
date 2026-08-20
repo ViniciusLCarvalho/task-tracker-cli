@@ -28,7 +28,8 @@ public class TaskController {
                         System.out.println("Usage: task-cli add \"description\"");
                         return;
                     }
-                    taskService.addTask(args[1]);
+                    int id = taskService.addTask(args[1]);
+                    System.out.println("Task added successfully (ID: "+id+")");
                     break;
                 case "update":
                     if (args.length != 3) {

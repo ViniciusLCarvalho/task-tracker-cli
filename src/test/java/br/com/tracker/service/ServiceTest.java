@@ -22,8 +22,9 @@ public class ServiceTest {
 
     @Test
     void shouldAddTask() throws Exception {
-        service.addTask("buy eggs");
+        int id = service.addTask("buy eggs");
 
+        assertEquals(1, id);
         assertEquals(1, repository.getTasks().get(0).getId());
         assertEquals("buy eggs", repository.getTasks().get(0).getDescription());
     }

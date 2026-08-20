@@ -11,8 +11,7 @@
   <name>task-tracker-cli</name>
 
   <properties>
-    <maven.compiler.source>21</maven.compiler.source>
-    <maven.compiler.target>21</maven.compiler.target>
+    <maven.compiler.release>21</maven.compiler.release>
   </properties>
 
   <dependencies>
@@ -25,6 +24,7 @@
   </dependencies>
 
   <build>
+    <finalName>task-tracker-cli</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -36,7 +36,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>AppTaskTracker</mainClass>
+              <mainClass>br.com.tracker.AppTaskTracker</mainClass>
             </manifest>
           </archive>
         </configuration>

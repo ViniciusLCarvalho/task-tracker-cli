@@ -27,9 +27,10 @@ public class FakeTaskService extends TaskService {
     }
 
     @Override
-    public void addTask(String desc) throws IOException {
+    public int addTask(String desc) throws IOException {
         addTaskCalled = true;
         receivedDescription = desc;
+        return 1;
     }
 
     @Override
