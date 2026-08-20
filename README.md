@@ -4,9 +4,9 @@ Aplicação de linha de comando em Java para criar e administrar tarefas. Cada t
 
 Os dados são mantidos localmente no arquivo `tasks.json`, criado automaticamente no diretório de onde o programa é executado.
 
-## Projeto
+## Desafio
 
-Repositório: [https://github.com/ViniciusLCarvalho/task-tracker-cli](https://github.com/ViniciusLCarvalho/task-tracker-cli)
+Solução para o desafio do [task-tracker](https://roadmap.sh/projects/task-tracker) do [roadmap.sh](https://roadmap.sh/).
 
 ## Pré-requisitos
 
